@@ -1,0 +1,90 @@
+body{
+	font-size: 14px;
+	margin: 10px;
+	padding: 0px;
+	font-family: "Times New Roman", Times, serif;	
+}
+
+a{
+	text-decoration: none;
+	color: #042f77;
+	font-weight: bold;
+}
+
+table td, table, table th{
+	border-collapse: collapse;
+	border: 1px solid #777777;
+	padding: 5px;
+}
+
+table{
+	margin: 20px 0px;
+}
+
+table th{
+	background: #042f77;
+	color: #ffffff;
+}
+
+table .selected{
+	background: #d0d8e5;
+}
+
+table .selected .selected{
+	background: #a7b6d0;
+}
+
+p{
+	margin-top: 0;
+}
+
+.inline-block{
+	display: inline-block;
+}
+
+.uravnenie{
+	margin-bottom: 10px;
+}
+
+.virazhenie{
+	padding-bottom: 10px;
+}
+
+.virazhenie a{
+	padding: 0px 5px;
+	margin: 10px;
+	background: #042f77;
+	color: #ffffff;
+	border-radius: 10px;
+	font-weight: bold;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.virazhenie input{
+	width: 30px;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	border-bottom: 1px solid #939393;
+	font-style: italic;
+	text-align: center;
+	margin: 0px 10px;
+	background: #f0f0f0;
+}
+
+.virazhenie select{
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	border-bottom: 1px solid #939393;
+	width: 50px;	
+	background: #f0f0f0;
+}
+
+.submit{
+	float: left;
+}
+
+.ogranichenie{
+	display: none;
+}
