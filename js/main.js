@@ -23,16 +23,16 @@ $('a.add_x').live('click', function(){
 			max_x = count_x;		
 		
 	}
-	$('.virazhenie').children('.left_side').append(' +<input type="text" value ="0" />X'+count_x);
+	$('.virazhenie').children('.left_side').append(' +<input type="number" value ="0" />X'+count_x);
 	return false;
 })
 
 // Добавляем ограничение
 $('.ogranichenie_add a').live('click', function(){
-	var html_inputs = '<input type="text" value ="0" />X1';
+	var html_inputs = '<input type="number" value ="0" />X1';
 	for (var q = 2; q<=max_x;q++)
-		html_inputs += '+ <input type="text" value ="0" />X'+q+' ';
-	var html_code = '<div class="ogranichenie virazhenie"><span class="left_side">'+html_inputs+'</span><span class="right_side"> <select><option value="1">≤</option><option value="1">=</option><option value="-1">≥</option></select> <input type="text" value ="0" /></span></div>';		
+		html_inputs += '+ <input type="number" value ="0" />X'+q+' ';
+	var html_code = '<div class="ogranichenie virazhenie"><span class="left_side">'+html_inputs+'</span><span class="right_side"> <select><option value="1">≤</option><option value="1">=</option><option value="-1">≥</option></select> <input type="number" value ="0" /></span></div>';		
 	$('#ogranichenie_block').append(html_code);
 	$('#ogranichenie_block .ogranichenie:hidden').slideDown(200);
 	
@@ -208,7 +208,7 @@ $('div.subsubmit ').live('click', function(){
 	// max1;2    - тут не надо |
 
 	// фильтруем вводимую строку по уравнениям
-	var st = "<3;6;-4;1;12|>4;-13;10;5;6|>3;7;1;0;1|min2;5;3;8"// наша строчка которую мы разбиваем
+	var st = document.getElementById("textinp").value;//"<3;6;-4;1;12|>4;-13;10;5;6|>3;7;1;0;1|min2;5;3;8"// наша строчка которую мы разбиваем
 	var massmatrix = st.split("|")//Разбили строку на уравнения
 	// создаем масив
 	matrix = new Array();
