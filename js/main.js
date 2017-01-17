@@ -32,7 +32,7 @@ $('.ogranichenie_add a').live('click', function(){
 	var html_inputs = '<input type="number" value ="0" />X1';
 	for (var q = 2; q<=max_x;q++)
 		html_inputs += '+ <input type="number" value ="0" />X'+q+' ';
-	var html_code = '<div class="ogranichenie virazhenie"><span class="left_side">'+html_inputs+'</span><span class="right_side"> <select><option value="1">≤</option><option value="1">=</option><option value="-1">≥</option></select> <input type="number" value ="0" /></span></div>';		
+	var html_code = '<div class="ogranichenie virazhenie"><span class="left_side">'+html_inputs+'</span><span class="right_side"> <select><option value="1"><</option><option value="1">≤</option><option value="-1">=</option><option value="-1">≥</option><option value="-1">></option></select> <input type="number" value ="0" /></span></div>';		
 	$('#ogranichenie_block').append(html_code);
 	$('#ogranichenie_block .ogranichenie:hidden').slideDown(200);
 	
@@ -44,7 +44,7 @@ $('div.submit').live('click', function(){
 	$('#result').html(' '); // Очищаем поле результатов
 	$('.text').slideUp(200);
 	var i = 0;
-	var matrix = new Array();
+	matrix = new Array();
 
 	/*################## ШАГ 0 ##################*/	
 	// Перебираем все ограничения
@@ -60,14 +60,16 @@ $('div.submit').live('click', function(){
 		}
 		i++;
 	})
+	// 0[0,1,2]
+	// 1[0,1,2]
 
-	// Массив индексов по горизонтале
+	// Массив индексов по горизонтале   (для вывода)
 	horisont_x = new Array();
 	for (i=0; i< max_x + 1; i++){
 		horisont_x[i] = i;
 	}
 
-	// Массив индексов по вертикале
+	// Массив индексов по вертикале    (для вывода)
 	vertical_x = new Array();
 	for (i=0; i< $('#ogranichenie_block .ogranichenie').length; i++){
 		vertical_x[i] = i + max_x;
@@ -89,7 +91,6 @@ $('div.submit').live('click', function(){
 		}
 		Fun[j] = inp_val; // Матрица исходных значений
 	}
-
 	// Добавим ее в основную матрицу
 	matrix.push(Fun); 
 	
@@ -138,8 +139,8 @@ $('div.submit').live('click', function(){
 		}
 
 		if (minelm(free, false, true) < 0 && iteration < 10) // нужно ли еще разок пройти второй шаг ?
-		if (confirm("продолжаем Шаг 1_"+iteration+" ?")) // Да здравсвует рекурсия, но спросим (чтобы комп не завис)
-			step1();	
+			if (confirm("продолжаем Шаг 1_"+iteration+" ?")) // Да здравсвует рекурсия, но спросим (чтобы комп не завис)
+				step1();	
 	}
 
 
